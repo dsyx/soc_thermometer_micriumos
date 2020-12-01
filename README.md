@@ -306,3 +306,125 @@ void sl_bt_process_event(sl_bt_msg_t *evt)
 `sl_bt_ota_dfu_on_event()` 用于处理 OTA DFU 事件。 `sl_bt_ht_on_event()` 用于处理 Health Thermometer GATT 的相关事件。这里对用户最重要的是 `sl_bt_on_event()` 。在 `sl_bt_process_event()` 的定义处， `sl_bt_on_event()` 被实现为一个弱定义，在 `app.c` 中，定义了一个同名的 `sl_bt_on_event` 来覆盖该弱定义，用户可以在该函数中处理协议栈事件。
 
 现在，基本上把整个应用程序走了一遍，接下来将编写一些自定义的功能来进行更深入的探讨。
+
+# 3. 添加 LED1 并为其实现 Bluetooth 控制功能
+
+## 3.1 添加 LED1 驱动
+
+在 Simplicity Studio 中的 Project Explorer 下双击项目的 `.slcp` 文件可以打开项目配置器，这是一个用于配置项目设置和组件的可视化工具。
+
+![](images/20201201095417.png)
+
+点击 SOFTWARE COMPONENTS 选项卡以切换到组件配置，并在搜索框上输入 led 以搜素相关组件：
+
+![](images/20201201100500.png)
+
+选中 Platform > Driver > Simple LED，并点击 Add New Instances 按钮以添加一个实例，命名实例名为 led1：
+
+![](images/20201201100710.png)
+
+根据无线板原理图 [BRD4161A-A02-schematic.pdf](docs/BRD4161A-A02-schematic.pdf)，可得知 LED1 使用的是 PF5 引脚：
+
+![](images/20201201101210.png)
+
+根据主板原理图 [BRD4001A-A01-schematic.pdf](docs/BRD4001A-A01-schematic.pdf)，可得知 LED1 是高电平点亮的：
+
+![](images/20201201101211.png)
+
+点击 Platform > Driver > Simple LED > led1 的配置按钮：
+
+![](images/20201201101356.png)
+
+在打开的 Simple LED (led1) 页面上配置 LED1 的属性：
+
+![](images/20201201101558.png)
+
+配置完成后，项目配置器会自动生成及更改相应的代码源文件，主要是：
+
+* `autogen/sl_component_catalog.h`
+* `autogen/sl_simple_led_instances.c`
+* `autogen/sl_simple_led_instances.h`
+
+## 3.2 为 LED1 添加 Bluetooth GATT 项
+
+在 SOFTWARE COMPONENTS 选项卡中的搜索框上输入 gatt 以搜素相关组件：
+
+![](images/20201201103903.png)
+
+点击 Advanced Configurators > Bluetooth GATT Configurator 的配置按钮以打开 GATT 配置器：
+
+![](images/20201201104042.png)
+
+选中 Custom BLE GATT Profile，然后点击添加按钮以创建一个 Service：
+
+![](images/20201201104324.png)
+
+选中新建的 Service，并修改其具体信息，这里将其命名为 LED Control：
+
+![](images/20201201104739.png)
+
+选中 LED Control Service，然后点击添加按钮以创建一个 Characteristic，并修改其具体信息，这里将其命名为 On/Off：
+
+![](images/20201201105300.png)
+
+点击保存后 GATT 配置器将自动生成相应的代码源文件。
+
+> 注：GATT 配置器并不会像项目配置器一样自动保存，所以需要手动保存后才会自动生成代码。
+
+生成的主要代码为：
+
+* `autogen/gatt_db.c`
+* `autogen/gatt_db.h`
+
+## 3.3 编写相应代码
+
+由于我们使用组件配置器添加 LED1 的驱动，所以我们无需手动初始化（自动生成的组件代码会为驱动执行初始化）。
+
+在 [2. 从 main 出发](#2-从-main-出发) 中得知，我们应该在 `app.c` 的 `sl_bt_on_event()` 函数中处理协议栈的事件。从 switch 语句的 case `sl_bt_evt_system_boot_id` 跳转，这将跳转到 `gecko_sdk_3.0.0/protocol/bluetooth/inc/sl_bt_types.h` ，可以发现协议栈事件的 id 都在这里定义。在其中找到我们需要的事件 id：
+
+```c
+#define sl_bt_evt_gatt_server_user_write_request_id                  0x020a00a0
+#define sl_bt_evt_gatt_server_user_read_request_id                   0x010a00a0
+```
+
+之后，我们在 switch 语句中添加我们对这两个事件的处理：
+
+```c
+///////////////////////////////////////////////////////////////////////////
+// Add additional event handlers here as your application requires!      //
+///////////////////////////////////////////////////////////////////////////
+case sl_bt_evt_gatt_server_user_write_request_id:
+  if (evt->data.evt_gatt_server_user_write_request.characteristic == gattdb_on_off) { // 写入的是否 On/Off Characteristic
+    if (evt->data.evt_gatt_server_user_write_request.value.data[0]) {                 // 写入的单字节数据值
+      sl_led_turn_on(&sl_led_led1);  // LED1 ON
+    } else {
+      sl_led_turn_off(&sl_led_led1); // LED1 OFF
+    }
+    // 发送写响应
+    sl_bt_gatt_server_send_user_write_response(evt->data.evt_gatt_server_user_write_request.connection,
+                                               evt->data.evt_gatt_server_user_write_request.characteristic,
+                                               0);
+  }
+  break;
+
+case sl_bt_evt_gatt_server_user_read_request_id:
+  if(evt->data.evt_gatt_server_user_read_request.characteristic == gattdb_on_off) {
+    // 读 LED1 的状态
+    sl_led_state_t led_state = sl_led_get_state(&sl_led_led1);
+    uint16_t sent_len = 0;
+    // 发送读响应
+    sl_bt_gatt_server_send_user_read_response(evt->data.evt_gatt_server_user_read_request.connection,
+                                              evt->data.evt_gatt_server_user_read_request.characteristic,
+                                              0,
+                                              1,
+                                              &led_state,
+                                              &sent_len);
+  }
+  break;
+```
+
+保存并编译项目，然后将其刷写到设备上。
+
+使用 App 写入 0/1 到 On/Off Characteristic，可以观察到主板上的 LED1 发生变化：
+
+![](images/RPReplay_Final1606809935.gif)

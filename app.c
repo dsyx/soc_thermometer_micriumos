@@ -183,6 +183,31 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
     ///////////////////////////////////////////////////////////////////////////
     // Add additional event handlers here as your application requires!      //
     ///////////////////////////////////////////////////////////////////////////
+    case sl_bt_evt_gatt_server_user_write_request_id:
+      if (evt->data.evt_gatt_server_user_write_request.characteristic == gattdb_on_off) {
+        if (evt->data.evt_gatt_server_user_write_request.value.data[0]) {
+          sl_led_turn_on(&sl_led_led1);
+        } else {
+          sl_led_turn_off(&sl_led_led1);
+        }
+        sl_bt_gatt_server_send_user_write_response(evt->data.evt_gatt_server_user_write_request.connection,
+                                                   evt->data.evt_gatt_server_user_write_request.characteristic,
+                                                   0);
+      }
+      break;
+
+    case sl_bt_evt_gatt_server_user_read_request_id:
+      if(evt->data.evt_gatt_server_user_read_request.characteristic == gattdb_on_off) {
+        sl_led_state_t led_state = sl_led_get_state(&sl_led_led1);
+        uint16_t sent_len = 0;
+        sl_bt_gatt_server_send_user_read_response(evt->data.evt_gatt_server_user_read_request.connection,
+                                                  evt->data.evt_gatt_server_user_read_request.characteristic,
+                                                  0,
+                                                  1,
+                                                  &led_state,
+                                                  &sent_len);
+      }
+      break;
 
     // -------------------------------
     // Default event handler.

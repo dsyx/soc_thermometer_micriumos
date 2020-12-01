@@ -51,7 +51,7 @@ component:
   id: cli
 - {id: mpu}
 - {id: EFR32MG12P432F1024GL125}
-- instance: [led0]
+- instance: [led0, led1]
   id: simple_led
 - {id: rail_util_pti}
 - {id: simple_timer_micriumos}
@@ -78,6 +78,5 @@ tag: ['hardware:component:sensor:si7021', 'hardware:rf:band:2400', 'hardware:com
   'hardware:component:led:1+']
 category: Bluetooth Examples
 toolchain_settings: []
-config_file: []
 ui_hints: {}
 

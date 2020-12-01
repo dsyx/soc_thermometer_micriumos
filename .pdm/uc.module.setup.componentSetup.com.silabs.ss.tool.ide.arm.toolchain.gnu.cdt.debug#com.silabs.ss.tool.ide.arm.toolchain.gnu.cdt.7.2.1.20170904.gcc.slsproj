@@ -657,12 +657,12 @@
   <folder name="autogen">
     <file name=".crc_config.crc" builtin="true" generated="true" uri="studio:/project/autogen/.crc_config.crc"/>
   </folder>
-  <file name="main.c" linked="false" uri="file:///C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.0/app/bluetooth/example/soc_thermometer/main.c"/>
-  <file name="app.c" linked="false" uri="file:///C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.0/app/bluetooth/example/soc_thermometer/app.c"/>
-  <file name="app_properties.c" linked="false" uri="file:///C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.0/app/bluetooth/example/soc_thermometer/app_properties.c"/>
-  <file name="app.h" linked="false" uri="file:///C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.0/app/bluetooth/example/soc_thermometer/app.h"/>
-  <file name="create_bl_files.bat" linked="false" uri="file:///C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.0/app/bluetooth/script/create_bl_files.bat"/>
-  <file name="create_bl_files.sh" linked="false" uri="file:///C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.0/app/bluetooth/script/create_bl_files.sh"/>
+  <file name="main.c" linked="false" uri="file:///C:/Users/shan/SimplicityStudio/v5_workspace/soc_thermometer_micriumos/main.c"/>
+  <file name="app.c" linked="false" uri="file:///C:/Users/shan/SimplicityStudio/v5_workspace/soc_thermometer_micriumos/app.c"/>
+  <file name="app_properties.c" linked="false" uri="file:///C:/Users/shan/SimplicityStudio/v5_workspace/soc_thermometer_micriumos/app_properties.c"/>
+  <file name="app.h" linked="false" uri="file:///C:/Users/shan/SimplicityStudio/v5_workspace/soc_thermometer_micriumos/app.h"/>
+  <file name="create_bl_files.bat" linked="false" uri="file:///C:/Users/shan/SimplicityStudio/v5_workspace/soc_thermometer_micriumos/create_bl_files.bat"/>
+  <file name="create_bl_files.sh" linked="false" uri="file:///C:/Users/shan/SimplicityStudio/v5_workspace/soc_thermometer_micriumos/create_bl_files.sh"/>
   <includePath uri="studio:/project/"/>
   <includePath uri="studio:/project/gecko_sdk_3.0.0/platform/common/toolchain/inc"/>
   <includePath uri="studio:/project/gecko_sdk_3.0.0/platform/driver/leddrv/inc"/>
@@ -703,8 +703,8 @@
   <includePath uri="studio:/project/gecko_sdk_3.0.0/platform/radio/rail_lib/plugin/rail_util_pti"/>
   <includePath uri="studio:/project/gecko_sdk_3.0.0/app/bluetooth/common/simple_timer_micriumos"/>
   <includePath uri="studio:/project/gecko_sdk_3.0.0/platform/service/udelay/inc"/>
-  <includePath uri="studio:/project/gecko_sdk_3.0.0/platform/driver/i2cspm/inc"/>
   <includePath uri="studio:/project/gecko_sdk_3.0.0/platform/service/power_manager/inc"/>
+  <includePath uri="studio:/project/gecko_sdk_3.0.0/platform/driver/i2cspm/inc"/>
   <includePath uri="studio:/project/gecko_sdk_3.0.0/platform/micrium_os"/>
   <includePath uri="studio:/project/gecko_sdk_3.0.0/platform/micrium_os/kernel/source"/>
   <includePath uri="studio:/project/gecko_sdk_3.0.0/platform/micrium_os/kernel/include"/>
@@ -746,72 +746,72 @@
   <toolOption toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.nostdlibs" value="false"/>
   <toolOption toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.linker" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.linker.circulardependency" value="true"/>
   <toolOption toolId="toolOption.uc.linker" optionId="toolOption.uc.linker.nano_c_libs" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.optimization.datasect" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="gnu.c.compiler.option.warnings.pedantic" value="false"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.toolchain" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.script" value="${workspace_loc:/${ProjName}}/autogen/linkerfile.ld"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.optimization.functionsects" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.misc.dialect" value="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.misc.dialect.cpp0x"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.optimization.level" value="gnu.c.optimization.level.size"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.floatingpoint.enable" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="gnu.cpp.compiler.option.warnings.toerrors" value="false"/>
-  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.data_sections" value="true"/>
-  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.function_sections" value="true"/>
-  <toolOption toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.assembler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.assembler.preinclude">
-    <toolListOption builtin="true" value="sl_gcc_preinclude.h"/>
-  </toolOption>
-  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.c_standard" value="c99"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.optimization.level" value="gnu.cpp.compiler.optimization.level.size"/>
-  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.preinclude">
-    <toolListOption value="sl_gcc_preinclude.h"/>
-  </toolOption>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="gnu.cpp.compiler.option.warnings.extrawarn" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.linker" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.linker.floatingpoint.type" value="floatingpoint.type.softfp"/>
+  <toolOption toolId="toolOption.uc.linker" optionId="toolOption.uc.linker.linkerScript" value="$project/autogen/linkerfile.ld"/>
+  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.warnings.pedantic" value="false"/>
   <toolOption toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.preinclude">
     <toolListOption builtin="true" value="sl_gcc_preinclude.h"/>
   </toolOption>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.optimization.omitframepointer" value="true"/>
-  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.warnings.pedantic" value="false"/>
-  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.optimization" value="size"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.linker" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.linker.clibs" value="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.nanospec"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.floatingpoint.type" value="floatingpoint.type.softfp"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="gnu.cpp.compiler.option.warnings.extrawarn" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.misc.dialect" value="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.misc.dialect.c99"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.no_rtti" value="true"/>
-  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.omit_frame_pointer" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.floatingpoint.type" value="floatingpoint.type.softfp"/>
-  <toolOption toolId="toolOption.uc.toolchain" optionId="toolOption.uc.toolchain.float_abi" value="softfp"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="gnu.c.compiler.option.warnings.toerrors" value="false"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.linker" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.linker.floatingpoint.enable" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.clibs" value="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.nanospec"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.no_exceptions" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.optimization.functionsects" value="true"/>
-  <toolOption toolId="toolOption.uc.toolchain" optionId="toolOption.uc.toolchain.cpu" value="cortex-m4"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="gnu.c.compiler.option.warnings.allwarn" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.linker" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.linker.floatingpoint.type" value="floatingpoint.type.softfp"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.toolchain" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.usescript" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="gnu.cpp.compiler.option.warnings.pedantic" value="false"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.debug.builtin" value="true"/>
   <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.warnings.extra" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="gnu.c.compiler.option.warnings.extrawarn" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.optimization.datasect" value="true"/>
-  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.no_builtin" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.assembler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.assembler.floatingpoint.enable" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.floatingpoint.type" value="floatingpoint.type.softfp"/>
-  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.no_exceptions" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.floatingpoint.enable" value="true"/>
-  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.warnings.all" value="true"/>
-  <toolOption toolId="toolOption.uc.linker" optionId="toolOption.uc.linker.linkerScript" value="$project/autogen/linkerfile.ld"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="gnu.cpp.compiler.option.warnings.allwarn" value="true"/>
-  <toolOption toolId="toolOption.uc.assembler" optionId="toolOption.uc.assembler.preinclude">
-    <toolListOption value="sl_gcc_preinclude.h"/>
+  <toolOption toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.assembler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.assembler.preinclude">
+    <toolListOption builtin="true" value="sl_gcc_preinclude.h"/>
   </toolOption>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.floatingpoint.enable" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.floatingpoint.enable" value="true"/>
   <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.debug.builtin" value="true"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.assembler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.assembler.floatingpoint.type" value="floatingpoint.type.softfp"/>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.optimization.omitframepointer" value="true"/>
-  <toolOption toolId="toolOption.uc.toolchain" optionId="toolOption.uc.toolchain.fpu" value="fpv4-sp"/>
-  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.cxx_standard" value="c++11"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.optimization.functionsects" value="true"/>
+  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.warnings.all" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="gnu.c.compiler.option.warnings.pedantic" value="false"/>
+  <toolOption toolId="toolOption.uc.toolchain" optionId="toolOption.uc.toolchain.float_abi" value="softfp"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.floatingpoint.enable" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.floatingpoint.type" value="floatingpoint.type.softfp"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="gnu.c.compiler.option.warnings.toerrors" value="false"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.linker" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.linker.clibs" value="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.nanospec"/>
+  <toolOption toolId="toolOption.uc.toolchain" optionId="toolOption.uc.toolchain.cpu" value="cortex-m4"/>
   <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.warnings.are_errors" value="false"/>
   <toolOption toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.preinclude">
     <toolListOption builtin="true" value="sl_gcc_preinclude.h"/>
   </toolOption>
-  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.debug.builtin" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.optimization.omitframepointer" value="true"/>
+  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.function_sections" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.floatingpoint.enable" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.assembler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.assembler.floatingpoint.type" value="floatingpoint.type.softfp"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.no_rtti" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.optimization.datasect" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.toolchain" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.usescript" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.clibs" value="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.nanospec"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.optimization.level" value="gnu.c.optimization.level.size"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.optimization.level" value="gnu.cpp.compiler.optimization.level.size"/>
+  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.c_standard" value="c99"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="gnu.cpp.compiler.option.warnings.toerrors" value="false"/>
+  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.no_builtin" value="true"/>
+  <toolOption toolId="toolOption.uc.assembler" optionId="toolOption.uc.assembler.preinclude">
+    <toolListOption value="sl_gcc_preinclude.h"/>
+  </toolOption>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.floatingpoint.type" value="floatingpoint.type.softfp"/>
+  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.no_exceptions" value="true"/>
+  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.omit_frame_pointer" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="gnu.c.compiler.option.warnings.allwarn" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.assembler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.assembler.floatingpoint.enable" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.no_exceptions" value="true"/>
+  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.data_sections" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="gnu.cpp.compiler.option.warnings.allwarn" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.floatingpoint.type" value="floatingpoint.type.softfp"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="gnu.c.compiler.option.warnings.extrawarn" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="gnu.cpp.compiler.option.warnings.pedantic" value="false"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.optimization.datasect" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.misc.dialect" value="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.misc.dialect.cpp0x"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.compiler.optimization.functionsects" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.optimization.omitframepointer" value="true"/>
   <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.no_rtti" value="true"/>
+  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.cxx_standard" value="c++11"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.base" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.misc.dialect" value="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.misc.dialect.c99"/>
+  <toolOption toolId="toolOption.uc.toolchain" optionId="toolOption.uc.toolchain.fpu" value="fpv4-sp"/>
+  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.preinclude">
+    <toolListOption value="sl_gcc_preinclude.h"/>
+  </toolOption>
+  <toolOption toolId="toolOption.uc.compiler" optionId="toolOption.uc.compiler.optimization" value="size"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.linker" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.cpp.linker.floatingpoint.enable" value="true"/>
+  <toolOption builtin="true" toolId="com.silabs.ide.si32.gcc.cdt.managedbuild.toolchain" optionId="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.linker.script" value="${workspace_loc:/${ProjName}}/autogen/linkerfile.ld"/>
 </project>
